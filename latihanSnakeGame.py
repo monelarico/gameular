@@ -9,24 +9,24 @@ class SNAKE: #membuat ular
             self.direction = Vector2(0,0)
             self.new_block = False
 
-            self.head_up = pygame.image.load('Graphics/Hatas.png').convert_alpha()
-            self.head_down = pygame.image.load('Graphics/Hbawah.png').convert_alpha()
-            self.head_right = pygame.image.load('Graphics/Hkanan.png').convert_alpha()
-            self.head_left = pygame.image.load('Graphics/Hkiri.png').convert_alpha()
+            self.head_up = pygame.image.load('Graphics/2_tophead.png').convert_alpha()
+            self.head_down = pygame.image.load('Graphics/2_bothead.png').convert_alpha()
+            self.head_right = pygame.image.load('Graphics/2_righthead.png').convert_alpha()
+            self.head_left = pygame.image.load('Graphics/2_lefthead.png').convert_alpha()
 
-            self.tail_up = pygame.image.load('Graphics/Eatas.png').convert_alpha()
-            self.tail_down = pygame.image.load('Graphics/Ebawah.png').convert_alpha()
-            self.tail_right = pygame.image.load('Graphics/Ekanan.png').convert_alpha()
-            self.tail_left = pygame.image.load('Graphics/Ekiri.png').convert_alpha()
+            self.tail_up = pygame.image.load('Graphics/1_botail.png').convert_alpha()
+            self.tail_down = pygame.image.load('Graphics/1_toptail.png').convert_alpha()
+            self.tail_right = pygame.image.load('Graphics/1_lefttail.png').convert_alpha()
+            self.tail_left = pygame.image.load('Graphics/1_rightail.png').convert_alpha()
 
-            self.body_vertical = pygame.image.load('Graphics/Bvertikal.png').convert_alpha()
-            self.body_horizontal = pygame.image.load('Graphics/Bhorizontal.png').convert_alpha()
+            self.body_vertical = pygame.image.load('Graphics/verbodysn.png').convert_alpha()
+            self.body_horizontal = pygame.image.load('Graphics/horbodysn.png').convert_alpha()
 
-            self.body_tr = pygame.image.load('Graphics/Katas.png').convert_alpha()
-            self.body_tl = pygame.image.load('Graphics/kiriatas.png').convert_alpha()
-            self.body_br = pygame.image.load('Graphics/Kbawah.png').convert_alpha()
-            self.body_bl = pygame.image.load('Graphics/kiribawah.png').convert_alpha()
-            self.crunch_sound = pygame.mixer.Sound('Sound/crunch.mp3')
+            self.body_tr = pygame.image.load('Graphics/toprig.png').convert_alpha()
+            self.body_tl = pygame.image.load('Graphics/topleft.png').convert_alpha()
+            self.body_br = pygame.image.load('Graphics/botrig.png').convert_alpha()
+            self.body_bl = pygame.image.load('Graphics/botleft.png').convert_alpha()
+            self.crunch_sound = pygame.mixer.Sound('Sound/gopay.flac')
 
         except FileNotFoundError as e:
             print(f"File not found: {e}")
@@ -149,7 +149,7 @@ class MAIN:  #membuat logika permainan ular
         self.snake.reset()
 
     def draw_grass(self):
-        grass_color = (240, 210, 30) #warna rumput tampilan
+        grass_color = (238, 242, 150) #warna rumput tampilan
         for row in range(cell_number):
             if row % 2 == 0:
                 for col in range(cell_number):
@@ -211,7 +211,7 @@ while True:    #membuat loop untuk user bisa berinteraksi seperti tekan tombol
                 if main_game.snake.direction.x != 1:
                     main_game.snake.direction = Vector2(-1,0)
 
-    screen.fill((255, 221, 51))  #untuk mengatur rgb tampilan latar belakang     
+    screen.fill((255, 143, 143))  #untuk mengatur rgb tampilan latar belakang
     main_game.draw_elements()
     pygame.display.update()
     clock.tick(60)
